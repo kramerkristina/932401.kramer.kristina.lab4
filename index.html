@@ -14,8 +14,10 @@
             <a href="#about">Обо мне</a>
             <a href="#top-movies">Топ сериалов</a>
             <a href="#directors">Любимые режиссёры</a>
+            <a href="#watchlist">Список просмотра</a>
             <a href="#contact">Связаться</a>
         </nav>
+        <button id="theme-toggle" class="submit-btn" style="margin-top: 15px; font-size: 0.9rem; padding: 10px 20px;">Сменить тему</button>
     </header>
 
     <main>
@@ -72,7 +74,7 @@
                 <article class="director-card">
                     <picture>
                         <source srcset="photo/murphy.webp" type="image/webp">
-                        <img src="murphy.webp" alt="Райан Мёрфи">
+                        <img src="photo/murphy.jpg" alt="Райан Мёрфи">
                     </picture>
                     <h3>Райан Мёрфи</h3>
                     <p>Американская история ужасов, Монстр, Рэтчед</p>
@@ -81,7 +83,7 @@
                 <article class="director-card">
                     <picture>
                         <source srcset="photo/wan.webp" type="image/webp">
-                        <img src="wan.webp" alt="Джеймс Ван">
+                        <img src="photo/wan.webp" alt="Джеймс Ван">
                     </picture>
                     <h3>Джеймс Ван</h3>
                     <p>Пила, Заклятие, Астрал</p>
@@ -90,7 +92,7 @@
                 <article class="director-card">
                     <picture>
                         <source srcset="photo/lawrence.webp" type="image/webp">
-                        <img src="lawrence.webp" alt="Фрэнсис Лоуренс">
+                        <img src="photo/lawrence.webp" alt="Фрэнсис Лоуренс">
                     </picture>
                     <h3>Фрэнсис Лоуренс</h3>
                     <p>Голодные игры, Константин, Я — легенда</p>
@@ -99,11 +101,41 @@
                 <article class="director-card">
                     <picture>
                         <source srcset="photo/rothenberg.webp" type="image/webp">
-                        <img src="rothenberg.webp" alt="Джейсон Ротенберг">
+                        <img src="photo/rothenberg.webp" alt="Джейсон Ротенберг">
                     </picture>
                     <h3>Джейсон Ротенберг</h3>
                     <p>Сотня (The 100)</p>
                 </article>
+            </div>
+        </section>
+
+        <section id="watchlist" class="watchlist-section">
+            <h2>Мой список к просмотру</h2>
+            <button id="toggle-table-btn" class="submit-btn" style="margin-bottom: 20px;">Скрыть/Показать список</button>
+            
+            <div id="table-container">
+                <div class="add-movie-controls form-group" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; max-width: 100%;">
+                    <input type="text" id="movie-title" placeholder="Название (напр. Бойцовский клуб)" style="flex: 1; min-width: 200px;">
+                    <input type="number" id="movie-year" placeholder="Год" style="width: 100px;">
+                    <select id="movie-status" style="padding: 15px; background-color: #1a1a1a; border: 1px solid #444; border-radius: 6px; color: var(--main-text);">
+                        <option value="К просмотру">К просмотру</option>
+                        <option value="Просмотрено">Просмотрено</option>
+                    </select>
+                    <button id="add-movie-btn" class="submit-btn">Добавить</button>
+                    <button id="clear-movies-btn" class="submit-btn" style="background-color: #660000;">Очистить</button>
+                </div>
+
+                <table class="movies-table" style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr style="background-color: var(--card-bg);">
+                            <th style="border: 1px solid #444; padding: 10px; text-align: left;">Название</th>
+                            <th style="border: 1px solid #444; padding: 10px; text-align: left;">Год</th>
+                            <th style="border: 1px solid #444; padding: 10px; text-align: left;">Статус</th>
+                        </tr>
+                    </thead>
+                    <tbody id="movies-tbody">
+                    </tbody>
+                </table>
             </div>
         </section>
 
@@ -114,17 +146,14 @@
                     <label for="sender-name">Ваше имя:</label>
                     <input type="text" id="sender-name" name="sender-name" placeholder="Введите ваше имя" required>
                 </div>
-
                 <div class="form-group">
                     <label for="sender-email">Ваш Email:</label>
                     <input type="email" id="sender-email" name="sender-email" placeholder="example@mail.ru" required>
                 </div>
-
                 <div class="form-group">
                     <label for="movie-message">Рекомендация или отзыв:</label>
                     <textarea id="movie-message" name="movie-message" rows="4" placeholder="Напишите, какой фильм или сериал стоит посмотреть..." required></textarea>
                 </div>
-
                 <button type="submit" class="submit-btn">Отправить</button>
             </form>
         </section>

@@ -334,3 +334,37 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+body.light-theme {
+    --main-bg: #f4f4f9;
+    --card-bg: #e6e6ea;
+    --main-text: #111111;
+    --accent-gold: #b8860b; 
+}
+
+body.light-theme table th,
+body.light-theme table td {
+    border-color: #bbb !important;
+}
+
+body.light-theme #movie-status {
+    background-color: #fff !important;
+    border-color: #ccc !important;
+    color: #111 !important;
+}
+
+body.light-theme form input,
+body.light-theme form textarea {
+    background-color: #fff;
+    border-color: #ccc;
+    color: #111;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.movies-table td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+}
